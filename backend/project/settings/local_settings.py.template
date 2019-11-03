@@ -1,4 +1,4 @@
-SECRET_KEY = "(d+j-(+kr-)*or^7pjcuih+mk1!=1(5962fpp))rj1do!v6xpe"
+SECRET_KEY = "^bjs!eik_n(%kc%5^!+co)!+u(wx^-!7a+qcb)2u30#p&7c8uf"
 
 ## DATABASES['default'] is overridden in dev.py settings
 # If no data base is defined, a SQLite local DB will be used in dev, and an

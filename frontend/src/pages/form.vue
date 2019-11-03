@@ -1,74 +1,158 @@
 <template>
-  <div class="color-theme-blue">
-    <f7-app :params="{ theme: 'auto', name: 'My App', id: 'com.demoapp.test' }">
-      <form class="list" id="my-form">
-        <ul>
-          <li>
-            <div class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">Name</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="name" placeholder="Your name" />
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">E-mail</div>
-                <div class="item-input-wrap">
-                  <input type="email" name="email" placeholder="E-mail" />
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">Gender</div>
-                <div class="item-input-wrap">
-                  <select name="gender">
-                    <option value="male" selected>Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title">Toggle</div>
-                <div class="item-after">
-                  <label class="toggle toggle-init">
-                    <input type="checkbox" name="toggle" value="yes" />
-                    <i class="toggle-icon"></i>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <div class="block block-strong row">
-        <div class="col">
-          <a class="button convert-form-to-data" href="#">Get Data</a>
-        </div>
-        <div class="col">
-          <a class="button fill-form-from-data" href="#">Fill Form</a>
-        </div>
-      </div>
-    </f7-app>
-  </div>
+  <f7-page name="form">
+    <f7-navbar title="Form" back-link="Back"></f7-navbar>
+
+    <f7-block-title>Form Example</f7-block-title>
+    <f7-list no-hairlines-md>
+      <f7-list-input
+        label="Name"
+        type="text"
+        placeholder="Your name"
+      ></f7-list-input>
+
+      <f7-list-input
+        label="E-mail"
+        type="email"
+        placeholder="E-mail"
+      ></f7-list-input>
+
+      <f7-list-input
+        label="URL"
+        type="url"
+        placeholder="URL"
+      ></f7-list-input>
+
+      <f7-list-input
+        label="Password"
+        type="password"
+        placeholder="Password"
+      ></f7-list-input>
+
+      <f7-list-input
+        label="Phone"
+        type="tel"
+        placeholder="Phone"
+      ></f7-list-input>
+
+      <f7-list-input
+        label="Gender"
+        type="select"
+        >
+        <option>Male</option>
+        <option>Female</option>
+      </f7-list-input>
+
+      <f7-list-input
+        label="Birth date"
+        type="date"
+        placeholder="Birth day"
+        defaultValue="2014-04-30"
+      ></f7-list-input>
+
+      <f7-list-item
+        title="Toggle"
+      >
+        <f7-toggle slot="after"></f7-toggle>
+      </f7-list-item>
+
+      <f7-list-input
+        label="Range"
+        :input="false"
+      >
+        <f7-range slot="input" :value="50" :min="0" :max="100" :step="1"></f7-range>
+      </f7-list-input>
+
+      <f7-list-input
+        type="textarea"
+        label="Textarea"
+        placeholder="Bio"
+      ></f7-list-input>
+      <f7-list-input
+        type="textarea"
+        label="Resizable"
+        placeholder="Bio"
+        resizable
+      ></f7-list-input>
+    </f7-list>
+
+    <f7-block-title>Buttons</f7-block-title>
+    <f7-block strong>
+      <f7-row tag="p">
+        <f7-button class="col">Button</f7-button>
+        <f7-button class="col" fill>Fill</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" raised>Raised</f7-button>
+        <f7-button class="col" raised fill>Raised Fill</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" round>Round</f7-button>
+        <f7-button class="col" round fill>Round Fill</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" outline>Outline</f7-button>
+        <f7-button class="col" round outline>Outline Round</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" small outline>Small</f7-button>
+        <f7-button class="col" small round outline>Small Round</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" small fill>Small</f7-button>
+        <f7-button class="col" small round fill>Small Round</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" large raised>Large</f7-button>
+        <f7-button class="col" large fill raised>Large Fill</f7-button>
+      </f7-row>
+      <f7-row tag="p">
+        <f7-button class="col" large fill raised color="red">Large Red</f7-button>
+        <f7-button class="col" large fill raised color="green">Large Green</f7-button>
+      </f7-row>
+    </f7-block>
+
+    <f7-block-title>Checkbox group</f7-block-title>
+    <f7-list>
+      <f7-list-item
+        checkbox
+        name="my-checkbox"
+        value="Books"
+        title="Books"
+      ></f7-list-item>
+      <f7-list-item
+        checkbox
+        name="my-checkbox"
+        value="Movies"
+        title="Movies"
+      ></f7-list-item>
+      <f7-list-item
+        checkbox
+        name="my-checkbox"
+        value="Food"
+        title="Food"
+      ></f7-list-item>
+    </f7-list>
+
+    <f7-block-title>Radio buttons group</f7-block-title>
+    <f7-list>
+      <f7-list-item
+        radio
+        name="radio"
+        value="Books"
+        title="Books"
+      ></f7-list-item>
+      <f7-list-item
+        radio
+        name="radio"
+        value="Movies"
+        title="Movies"
+      ></f7-list-item>
+      <f7-list-item
+        radio
+        name="radio"
+        value="Food"
+        title="Food"
+      ></f7-list-item>
+    </f7-list>
+  </f7-page>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="less" scoped>
-.redone {
-  background: blue;
-}
-</style>

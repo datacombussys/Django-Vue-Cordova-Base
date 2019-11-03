@@ -16,7 +16,7 @@
             <li v-for="(value, key) in $f7route.query" :key="key"><b>{{key}}:</b> {{value}}</li>
           </ul>
         </li>
-        <li><b>Route:</b> {{$f7route.route}}</li>
+        <li><b>Route:</b> {{$f7route.route.path}}</li>
       </ul>
     </f7-block>
     <f7-block strong>
@@ -24,7 +24,6 @@
     </f7-block>
   </f7-page>
 </template>
-
 <script>
-export default {}
+  export default {};
 </script>
