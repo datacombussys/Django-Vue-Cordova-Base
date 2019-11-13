@@ -8,6 +8,7 @@ Framework7 app created with following options:
 {
   "cwd": "/mnt/c/Users/Ian/Documents/dev/github/cordova-vue3/frontend",
   "type": [
+    "web",
     "cordova"
   ],
   "name": "My App",
@@ -17,7 +18,7 @@ Framework7 app created with following options:
   "cssPreProcessor": "less",
   "theming": {
     "customColor": true,
-    "color": "#20b0e2",
+    "color": "#036587",
     "darkTheme": false,
     "iconFonts": true,
     "fillBars": true
@@ -25,7 +26,7 @@ Framework7 app created with following options:
   "customBuild": true,
   "customBuildConfig": {
     "rtl": false,
-    "darkTheme": true,
+    "darkTheme": false,
     "lightTheme": true,
     "themes": [
       "ios",
@@ -91,8 +92,8 @@ Framework7 app created with following options:
   "webpack": {
     "developmentSourceMap": true,
     "productionSourceMap": true,
-    "hashAssets": false,
-    "preserveAssetsPaths": false,
+    "hashAssets": true,
+    "preserveAssetsPaths": true,
     "inlineAssets": true
   },
   "pkg": "io.framework7.myapp",
@@ -106,7 +107,12 @@ Framework7 app created with following options:
       "cordova-plugin-statusbar",
       "cordova-plugin-keyboard",
       "cordova-plugin-splashscreen",
-      "cordova-plugin-wkwebview-file-xhr"
+      "cordova-plugin-wkwebview-file-xhr",
+      "cordova-plugin-inappbrowser",
+      "cordova-plugin-device",
+      "cordova-plugin-file",
+      "cordova-plugin-media",
+      "cordova-plugin-safariviewcontroller"
     ]
   }
 }
@@ -139,6 +145,8 @@ Cordova project located in `cordova` folder. You shouldn't modify content of `co
 ## Assets
 
 Assets (icons, splash screens) source images located in `assets-src` folder. To generate your own icons and splash screen images, you will need to replace all assets in this directory with your own images (pay attention to image size and format), and run the following command in the project directory:
+
+```
 framework7 generate-assets
 ```
 

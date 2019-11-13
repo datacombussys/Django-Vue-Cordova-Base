@@ -25,7 +25,7 @@ module.exports = {
   ],
   output: {
     path: resolvePath(isCordova ? 'cordova/www' : 'www'),
-    filename: 'js/app.js',
+    filename: 'js/app.[hash:6].js',
     publicPath: '',
     hotUpdateChunkFilename: 'hot/hot-update.js',
     hotUpdateMainFilename: 'hot/hot-update.json',
@@ -133,8 +133,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'images/[name].[ext]',
-
+          name: '[path][name].[hash:6].[ext]',
+          context: path.resolve(__dirname, '../src'),
         },
       },
       {
@@ -142,8 +142,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'media/[name].[ext]',
-
+          name: '[path][name].[hash:6].[ext]',
+          context: path.resolve(__dirname, '../src'),
         },
       },
       {
@@ -151,8 +151,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'fonts/[name].[ext]',
-
+          name: '[path][name].[hash:6].[ext]',
+          context: path.resolve(__dirname, '../src'),
         },
       },
     ],
@@ -190,7 +190,7 @@ module.exports = {
       } : false,
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/app.css',
+      filename: 'css/app.[hash:6].css',
     }),
     new CopyWebpackPlugin([
       {

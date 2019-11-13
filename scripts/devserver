@@ -28,7 +28,7 @@ function startDango() {
 }
 
 function startWebPack() {
-  let child = spawn("vue-cli-service", ["serve"], {
+  let child = spawn("npm", ["run", "dev"], {
     cwd: BASE_DIR + "/frontend"
   });
 

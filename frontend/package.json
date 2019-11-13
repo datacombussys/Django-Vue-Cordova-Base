@@ -8,6 +8,7 @@
   "framework7": {
     "cwd": "/mnt/c/Users/Ian/Documents/dev/github/cordova-vue3/frontend",
     "type": [
+      "web",
       "cordova"
     ],
     "name": "My App",
@@ -17,7 +18,7 @@
     "cssPreProcessor": "less",
     "theming": {
       "customColor": true,
-      "color": "#20b0e2",
+      "color": "#036587",
       "darkTheme": false,
       "iconFonts": true,
       "fillBars": true
@@ -25,7 +26,7 @@
     "customBuild": true,
     "customBuildConfig": {
       "rtl": false,
-      "darkTheme": true,
+      "darkTheme": false,
       "lightTheme": true,
       "themes": [
         "ios",
@@ -91,8 +92,8 @@
     "webpack": {
       "developmentSourceMap": true,
       "productionSourceMap": true,
-      "hashAssets": false,
-      "preserveAssetsPaths": false,
+      "hashAssets": true,
+      "preserveAssetsPaths": true,
       "inlineAssets": true
     },
     "pkg": "io.framework7.myapp",
@@ -106,7 +107,12 @@
         "cordova-plugin-statusbar",
         "cordova-plugin-keyboard",
         "cordova-plugin-splashscreen",
-        "cordova-plugin-wkwebview-engine"
+        "cordova-plugin-wkwebview-engine",
+        "cordova-plugin-inappbrowser",
+        "cordova-plugin-device",
+        "cordova-plugin-file",
+        "cordova-plugin-media",
+        "cordova-plugin-safariviewcontroller"
       ]
     }
   },
@@ -132,20 +138,23 @@
     "Samsung >= 5"
   ],
   "dependencies": {
+    "axios": "^0.19.0",
     "dom7": "^2.1.3",
-    "framework7": "^5.1.0",
+    "framework7": "^5.1.1",
     "framework7-icons": "^3.0.0",
-    "framework7-vue": "^5.1.0",
+    "framework7-vue": "^5.1.1",
     "template7": "^1.4.2",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.5",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.7.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/runtime": "^7.6.3",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/runtime": "^7.7.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-vue-jsx": "^4.0.1",

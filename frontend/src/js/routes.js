@@ -8,6 +8,7 @@ import LeftPage2 from '../pages/left-page-2.vue';
 import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
 import NotFoundPage from '../pages/404.vue';
+import userTable from "../pages/users/user-list.vue";
 
 var routes = [
   {
@@ -21,6 +22,10 @@ var routes = [
   {
     path: '/form/',
     component: FormPage,
+	},
+	{
+    path: "/users/",
+    component: userTable
   },
 
   {
