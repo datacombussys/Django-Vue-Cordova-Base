@@ -2,14 +2,11 @@
   <f7-page name="home">
     <!-- Top Navbar -->
     <f7-navbar :sliding="false" large>
-      <f7-nav-left>
-        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="left"></f7-link>
-      </f7-nav-left>
-      <f7-nav-title sliding>ABC So-Cal</f7-nav-title>
       <f7-nav-right>
-        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="right"></f7-link>
+        <f7-link icon-ios="f7:lock" icon-aurora="f7:lock" icon-md="f7:lock"></f7-link>
+        <f7-link icon-ios="f7:lock_open" icon-aurora="f7:lock_open" icon-md="f7:lock_open"></f7-link>
       </f7-nav-right>
-      <f7-nav-title-large sliding>ABC So-Cal</f7-nav-title-large>
+      <f7-nav-title-large sliding>Company Title here</f7-nav-title-large>
     </f7-navbar>
     <!-- Toolbar-->
     <f7-toolbar bottom>
@@ -17,15 +14,11 @@
       <f7-link>Right Link</f7-link>
     </f7-toolbar>
     <!-- Page content-->
-    <f7-block strong>
-      <p>Here is your blank Framework7 app. Let's see what we have here.</p>
-    </f7-block>
+    <f7-block-title>Insert Class Schedule Here</f7-block-title>
+    <f7-block>  
+      <f7-block-title medium> Insert Wizard Here</f7-block-title>
 
-    <f7-block-title>Navigation</f7-block-title>
-    <f7-list>
-      <f7-list-item link="/about/" title="About"></f7-list-item>
-      <f7-list-item link="/form/" title="Form"></f7-list-item>
-    </f7-list>
+    </f7-block>
 
     <f7-block-title>Modals</f7-block-title>
     <f7-block strong>
