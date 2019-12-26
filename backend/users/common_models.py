@@ -4,17 +4,6 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, Group
 
 
-class CommonCompanyBase(models.Model):
-	dba_name 			= models.CharField(max_length=20)
-	legal_name 		= models.CharField(max_length=20, blank=True)
-	description 	= models.TextField(blank=True)
-	created_at 		= models.DateTimeField(default=timezone.now, editable=False)
-	phone 				= models.IntegerField(blank=True, null=True)
-	global_id 		= models.UUIDField(primary_key=False, default=uuid4, editable=False)
-
-	class Meta:
-			abstract 	= True
-
 class CommonUserBase(AbstractBaseUser):
 	email 				= models.EmailField(verbose_name="email", max_length=60, 										unique=True)
 	username 			= models.CharField(max_length=30, unique=True)
@@ -41,10 +30,3 @@ class CommonUserBase(AbstractBaseUser):
 	class Meta:
 		abstract = True
 
-class CommonGroup(Group):
-	is_employee 			= models.BooleanField(default=False)
-	is_datacom	 			= models.BooleanField(default=False)
-	is_partner 				= models.BooleanField(default=False)
-	is_MerchantAdmin 	= models.BooleanField(default=False)
-	is_customer				= models.BooleanField(default=False)
-	is_vendor	 				= models.BooleanField(default=False)

@@ -1,32 +1,32 @@
 {
-  "name": "my-app",
+  "name": "abc-so-cal",
   "private": true,
   "version": "1.0.0",
-  "description": "My App",
+  "description": "ABC So-Cal",
   "repository": "",
   "license": "UNLICENSED",
   "framework7": {
-    "cwd": "/mnt/c/Users/Ian/Documents/dev/github/cordova-vue3/frontend",
+    "cwd": "/mnt/d/dev/github/abc-socal/frontend",
     "type": [
       "web",
-      "cordova"
+      "pwa"
     ],
-    "name": "My App",
+    "name": "ABC So-Cal",
     "framework": "vue",
-    "template": "split-view",
+    "template": "single-view",
     "bundler": "webpack",
     "cssPreProcessor": "less",
     "theming": {
       "customColor": true,
-      "color": "#036587",
+      "color": "#004085",
       "darkTheme": false,
-      "iconFonts": true,
+      "iconFonts": false,
       "fillBars": true
     },
     "customBuild": true,
     "customBuildConfig": {
       "rtl": false,
-      "darkTheme": false,
+      "darkTheme": true,
       "lightTheme": true,
       "themes": [
         "ios",
@@ -95,39 +95,13 @@
       "hashAssets": true,
       "preserveAssetsPaths": true,
       "inlineAssets": true
-    },
-    "pkg": "io.framework7.myapp",
-    "cordova": {
-      "folder": "cordova",
-      "platforms": [
-        "ios",
-        "android"
-      ],
-      "plugins": [
-        "cordova-plugin-statusbar",
-        "cordova-plugin-keyboard",
-        "cordova-plugin-splashscreen",
-        "cordova-plugin-wkwebview-engine",
-        "cordova-plugin-inappbrowser",
-        "cordova-plugin-device",
-        "cordova-plugin-file",
-        "cordova-plugin-media",
-        "cordova-plugin-safariviewcontroller"
-      ]
     }
   },
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
     "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
-    "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
-    "build-dev-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build",
-    "build-prod-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build",
-    "build-dev-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build ios",
-    "build-prod-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build ios",
-    "build-dev-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build android",
-    "build-prod-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build android",
-    "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
+    "build-prod": "cross-env NODE_ENV=production node ./build/build.js"
   },
   "browserslist": [
     "Android >= 7",
@@ -138,49 +112,45 @@
     "Samsung >= 5"
   ],
   "dependencies": {
-    "axios": "^0.19.0",
     "dom7": "^2.1.3",
-    "framework7": "^5.1.1",
-    "framework7-icons": "^3.0.0",
-    "framework7-vue": "^5.1.1",
+    "framework7": "^5.2.0",
+    "framework7-vue": "^5.2.0",
     "template7": "^1.4.2",
-    "vue": "^2.6.10",
-    "vue-axios": "^2.1.5",
-    "vuex": "^3.1.2"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-syntax-jsx": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/runtime": "^7.7.1",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-jsx": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-vue-jsx": "^4.0.1",
-    "chalk": "^2.4.2",
-    "copy-webpack-plugin": "^5.0.4",
-    "cpy-cli": "^2.0.0",
+    "chalk": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
-    "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
+    "css-loader": "^3.4.0",
+    "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "mini-css-extract-plugin": "^0.8.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "ora": "^4.0.2",
+    "ora": "^4.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.0",
-    "style-loader": "^1.0.0",
-    "terser-webpack-plugin": "^2.2.1",
-    "url-loader": "^2.2.0",
-    "vue-loader": "^15.7.2",
+    "style-loader": "^1.1.2",
+    "terser-webpack-plugin": "^2.3.1",
+    "url-loader": "^3.0.0",
+    "vue-loader": "^15.8.3",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.41.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.10.1",
+    "workbox-webpack-plugin": "^4.3.1"
   }
 }

@@ -1,14 +1,9 @@
-/* iOS Cordova Tweak */
-.device-cordova.device-ios {
-  height: 100vh;
-}
-
 /* Custom color theme properties */
 :root {
-  --f7-theme-color: #036587;
-  --f7-theme-color-rgb: 3, 101, 135;
-  --f7-theme-color-shade: #02475f;
-  --f7-theme-color-tint: #0483af;
+  --f7-theme-color: #004085;
+  --f7-theme-color-rgb: 0, 64, 133;
+  --f7-theme-color-shade: #002c5c;
+  --f7-theme-color-tint: #0054ae;
 }
 
 /* Invert navigation bars to fill style */
@@ -41,9 +36,9 @@
 .navbar-large-transparent {
   --f7-navbar-large-title-text-color: #000;
 
-  --r: 3;
-  --g: 101;
-  --b: 135;
+  --r: 0;
+  --g: 64;
+  --b: 133;
   --progress: var(--f7-navbar-large-collapse-progress);
   --f7-bars-link-color: rgb(
     calc(var(--r) + (255 - var(--r)) * var(--progress)),
@@ -55,34 +50,4 @@
   --f7-navbar-large-title-text-color: #fff;
 }
 
-/* Left Panel right border when it is visible by breakpoint */
-.panel-left.panel-in-breakpoint:before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background: rgba(0,0,0,0.1);
-  content: '';
-  z-index: 6000;
-}
-
-/* Hide navbar link which opens left panel when it is visible by breakpoint */
-.panel-left.panel-in-breakpoint ~ .view .navbar .panel-open[data-panel="left"] {
-  display: none;
-}
-
-/*
-  Extra borders for main view and left panel for iOS theme when it behaves as panel (before breakpoint size)
-*/
-.ios .panel-left:not(.panel-in-breakpoint).panel-in ~ .view-main:before,
-.ios .panel-left:not(.panel-in-breakpoint).panel-closing ~ .view-main:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background: rgba(0,0,0,0.1);
-  content: '';
-  z-index: 6000;
-}
+/* Your app custom styles here */

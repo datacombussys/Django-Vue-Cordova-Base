@@ -38,17 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
 
-		#3rd Party Modules
-		'rest_framework',
+    #3rd Party Modules
+    'rest_framework',
     'drf_yasg',
     'commons',
     'rest_registration',
-		'django_extensions',
+    'django_extensions',
 
-		#My Modules
-		'users',
+    #My Modules
+    'users',
     'blog',
-		'merchants',
+    'companies',
+    'employees',
+    'customers',
+    'datacom',
 ]
 
 MIDDLEWARE = [
