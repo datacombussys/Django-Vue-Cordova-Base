@@ -6,18 +6,37 @@
     <f7-view>
       <f7-page>
         <f7-navbar title="Left Panel"></f7-navbar>
-        <f7-block>Left panel content goes here</f7-block>
-      </f7-page>
-    </f7-view>
-  </f7-panel>
-
-
-  <!-- Right panel with reveal effect-->
-  <f7-panel right reveal theme-dark>
-    <f7-view>
-      <f7-page>
-        <f7-navbar title="Right Panel"></f7-navbar>
-        <f7-block>Right panel content goes here</f7-block>
+          <f7-list>
+            <f7-list-item link="/admin/" title="Dashboard"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="gauge"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/class-settings/'" title="Class Settings"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="gear"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/create-class/" title="Create Classes"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="plus_circle_fill"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/orders/" title="Orders List"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="square_list_fill"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/notifications/" title="Notifications"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="bell_fill"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/email/" title="Email Templates"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="envelope_fill"></f7-icon>
+            </f7-list-item>
+            <f7-list-item link="/admin/users/" title="Users"
+            view=".view-main" panel-close>
+              <f7-icon slot="media" f7="person_3_fill"></f7-icon>
+            </f7-list-item>
+          </f7-list>
+     
       </f7-page>
     </f7-view>
   </f7-panel>
@@ -25,23 +44,6 @@
 
   <!-- Your main view, should have "view-main" class -->
   <f7-view main class="safe-areas" url="/"></f7-view>
-
-
-  <!-- Popup -->
-  <f7-popup id="my-popup">
-    <f7-view>
-      <f7-page>
-        <f7-navbar title="Popup">
-          <f7-nav-right>
-            <f7-link popup-close>Close</f7-link>
-          </f7-nav-right>
-        </f7-navbar>
-        <f7-block>
-          <p>Popup content goes here.</p>
-        </f7-block>
-      </f7-page>
-    </f7-view>
-  </f7-popup>
 
   <f7-login-screen id="my-login-screen">
     <f7-view>
@@ -74,6 +76,9 @@
   </f7-login-screen>
 </f7-app>
 </template>
+
+
+
 <script>
 
   import routes from '../js/routes.js';
@@ -89,8 +94,8 @@
           data: function () {
             return {
               user: {
-                firstName: 'John',
-                lastName: 'Doe',
+                firstName: 'Ian',
+                lastName: 'Christensen',
               },
 
             };
@@ -98,10 +103,10 @@
 
           // App routes
           routes: routes,
-          // Register service worker
-          serviceWorker: {
-            path: '/service-worker.js',
-          },
+          // Register service worker -temporarily disabled
+          // serviceWorker: {
+          //   path: '/service-worker.js',
+          // },
         },
 
         // Login screen data

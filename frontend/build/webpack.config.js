@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 const path = require('path');
 
@@ -15,7 +15,7 @@ function resolvePath(dir) {
 
 const env = process.env.NODE_ENV || 'development';
 const target = process.env.TARGET || 'web';
-
+const isCordova = target === 'cordova';
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
     './src/js/app.js',
   ],
   output: {
-    path: resolvePath('www'),
+    path: resolvePath(isCordova ? 'cordova/www' : 'www'),
     filename: 'js/app.[hash:6].js',
     publicPath: '',
     hotUpdateChunkFilename: 'hot/hot-update.js',
@@ -195,16 +195,11 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: resolvePath('src/static'),
-        to: resolvePath('www/static'),
+        to: resolvePath(isCordova ? 'cordova/www/static' : 'www/static'),
       },
-      {
-        from: resolvePath('src/manifest.json'),
-        to: resolvePath('www/manifest.json'),
-      },
+
     ]),
 
-    new WorkboxPlugin.InjectManifest({
-      swSrc: resolvePath('src/service-worker.js'),
-    }),
+
   ],
 };

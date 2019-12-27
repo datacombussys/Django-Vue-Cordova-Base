@@ -34,7 +34,10 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-
+# Cordova
+cordova/platforms/
+cordova/plugins/
+cordova/www/
 
 # Production build
 www/
